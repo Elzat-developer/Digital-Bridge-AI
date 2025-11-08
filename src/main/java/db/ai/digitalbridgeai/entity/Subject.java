@@ -15,4 +15,7 @@ public class Subject {
     @JdbcTypeCode(SqlTypes.INTEGER)
     private Integer id;
 
+    @Column(name = "subject_name")
+    private String subjectName;
+
 }
