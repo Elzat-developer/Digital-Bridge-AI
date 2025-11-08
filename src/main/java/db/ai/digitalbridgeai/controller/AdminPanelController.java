@@ -1,5 +1,6 @@
 package db.ai.digitalbridgeai.controller;
 
+import db.ai.digitalbridgeai.dto.LessonDto;
 import db.ai.digitalbridgeai.dto.UserDto;
 import db.ai.digitalbridgeai.service.AdminService;
 import lombok.RequiredArgsConstructor;
@@ -22,9 +23,9 @@ public class AdminPanelController {
         List<UserDto> users = adminService.getUserList();
         return ResponseEntity.ok(users);
     }
-//    @PostMapping("/create-lesson")
-//    public ResponseEntity<String> createLesson(LessonDto lessonDto){
-//        adminService.createLesson(lessonDto);
-//        return new ResponseEntity<>("Lesson successfully created!", HttpStatus.CREATED);
-//    }
+    @PostMapping("/create-lesson")
+    public ResponseEntity<String> createLesson(LessonDto lessonDto){
+        adminService.createLesson(lessonDto);
+        return new ResponseEntity<>("Lesson successfully created!", HttpStatus.CREATED);
+    }
 }

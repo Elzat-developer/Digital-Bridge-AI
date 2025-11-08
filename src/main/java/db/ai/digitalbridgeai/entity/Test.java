@@ -7,16 +7,20 @@ import org.hibernate.type.SqlTypes;
 
 @Entity
 @Data
-@Table(name = "lessons")
-public class Lesson {
+@Table(name = "tests")
+public class Test {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     @JdbcTypeCode(SqlTypes.INTEGER)
-    private Integer id;
-    @Column(name = "lesson_name")
-    private String lessonName;
-    @OneToOne
-    @JoinColumn(name = "pazls_id")
+    private Long id;
+    @Column(name = "exercise")
+    private String exercise;
+    @Column(name = "example")
+    private String example;
+    @Column(name = "result")
+    private String result;
+    @ManyToOne
+    @JoinColumn(name = "pazls_id",referencedColumnName = "id")
     private Pazl pazl;
 }
