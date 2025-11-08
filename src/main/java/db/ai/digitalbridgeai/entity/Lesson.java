@@ -14,6 +14,9 @@ public class Lesson {
     @Column(name = "id", nullable = false)
     @JdbcTypeCode(SqlTypes.INTEGER)
     private Integer id;
+    //@Column(name = "lesson_tag")
+
     @Column(name = "lesson_name")
     private String lessonName;
+
 }
